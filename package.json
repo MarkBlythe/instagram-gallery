@@ -1,7 +1,7 @@
 {
   "name": "instagram-gallery",
   "version": "0.1.0",
-  "description": "An instagram gallery feed that uses the instagram graph API.",
+  "description": "An instagram gallery react component that uses the instagram graph API.",
   "main": "dist/index.js",
   "files": [
     "dist"
