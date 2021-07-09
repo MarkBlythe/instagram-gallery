@@ -1,0 +1,20 @@
+{
+  "name": "instagram-gallery",
+  "version": "0.1.0",
+  "description": "An instagram gallery feed that uses the instagram graph API.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "author": "Mark Blythe",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
