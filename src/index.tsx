@@ -18,6 +18,7 @@ export const InstagramGallery = (props: any) => {
             setError(true);
           } else {
               setInstagramData(data.data);
+              console.log(instagramData);
               setLoading(false);
           }
       })
@@ -30,11 +31,11 @@ export const InstagramGallery = (props: any) => {
     }, []);
 
     if (loading) {
-        return "LOADING...";
+      return <div className="instagram-gallery">LOADING...</div>
     }
 
     if (error) {
-        return "Ruh Roh!. Something went wrong."
+        return <div className="instagram-gallery">Ruh Roh!. Something went wrong.</div>
     }
 
     return (
