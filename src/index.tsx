@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from "react";
-export const InstagramGallery = (props: any) => {
+import './styles.scss';
+
+interface GalleryProps {
+  accessToken: string;
+  count: number;
+}
+
+export const InstagramGallery = (props: GalleryProps) => {
 
     const [loading, setLoading] = useState<Boolean>(true);
     const [error, setError] = useState<Boolean>(false);
@@ -40,6 +47,34 @@ export const InstagramGallery = (props: any) => {
 
     return (
         <div className="instagram-gallery">
+
+           {instagramData.slice(0, props.count).map((feed:any, index:any) => (
+            <div key={index} className="instagram-item">
+              <a
+                key={index}
+                href={feed.permalink}
+                className="ig-instagram-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {(feed.media_type === 'IMAGE'||feed.media_type === 'CAROUSEL_ALBUM')? 
+                    <img
+                    className="instagram-image"
+                    key={index}
+                    src={feed.media_url}
+                    alt="description"
+                  />:
+                  // <video className="instagram-image" key={index} src={feed.media_url} type="video/mp4"></video>
+                  <img
+                    className="instagram-image"
+                    key={index}
+                    src={feed.media_url}
+                    alt="description"
+                  />
+                }
+              </a>
+            </div>
+          ))}
 
         </div>
     );
