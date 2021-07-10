@@ -23,7 +23,7 @@ npm install --save instagram-gallery
 import { InstagramGallery } from "instagram-gallery";
 
 const App = () => {
-  return <InstagramGallery accessToken="accessToken" count={24}/>  
+  return <InstagramGallery accessToken="accessToken" count={24}/>
 }
 
 export default App
@@ -31,11 +31,11 @@ export default App
 
 ## Getting an access token
 
-- Log in to [Facebook Developer](https://developers.facebook.com/)
-- Create an app that uses Instagram basic display.
-- Add a test user in the roles section (Bear in mind only public accounts can generate access tokens).
-- Accept the tester invitation on Instagram (Settings > Apps and Websites > Tester Invites)
-- Go back to the Facebook Developer portal and you should be able to generate a token for the account.
+-   Log in to [Facebook Developer](https://developers.facebook.com/)
+-   Create an app that uses Instagram basic display.
+-   Add a test user in the roles section (Bear in mind only public accounts can generate access tokens).
+-   Accept the tester invitation on Instagram (Settings > Apps and Websites > Tester Invites)
+-   Go back to the Facebook Developer portal and you should be able to generate a token for the account.
 
 ### :)
 
