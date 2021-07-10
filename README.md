@@ -36,3 +36,7 @@ export default App
 - Add a test user in the roles section (Bear in mind only public accounts can generate access tokens).
 - Accept the tester invitation on Instagram (Settings > Apps and Websites > Tester Invites)
 - Go back to the Facebook Developer portal and you should be able to generate a token for the account.
+
+### :)
+
+<a href="https://www.buymeacoffee.com/MORK" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
