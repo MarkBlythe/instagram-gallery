@@ -2,7 +2,7 @@
 
 ![MIT](https://img.shields.io/badge/license-MIT-green)
 ![passing](https://img.shields.io/badge/build-passing-green)
-![v1.0.0](https://img.shields.io/badge/release-v1.0.0-blue)
+![v1.1.0](https://img.shields.io/badge/release-v1.1.0-blue)
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
 
 A React Component that uses the Instagram Graph API to create a gallery from an Instagram users feed.
@@ -21,6 +21,10 @@ npm install --save instagram-gallery
 
 ### Simple usage
 
+To display a simple gallery with a set number of items.
+
+Use the `count` prop to define number of items.
+
 ```
 import { InstagramGallery } from "instagram-gallery";
 
@@ -32,6 +36,10 @@ export default App
 ```
 
 ### Usage with pagination
+
+To display a paginated gallery with a set number of items per page.
+
+Use the `count` prop to define number of items per page.
 
 ```
 import { InstagramGallery } from "instagram-gallery";
