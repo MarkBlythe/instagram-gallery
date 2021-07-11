@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./styles.scss";
 
 interface GalleryProps {
     accessToken: string;
@@ -49,7 +48,6 @@ export const InstagramGallery = (props: GalleryProps) => {
 
     useEffect(() => {
         if (instagramData !== null) {
-            console.log(instagramData);
             setPaginationNextUrl(instagramData.paging.next);
             setPaginationPrevUrl(instagramData.paging.previous);
         }

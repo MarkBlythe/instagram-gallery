@@ -6,9 +6,9 @@
     "keywords": [
         "instagram",
         "instagram-gallery",
+        "instagram feed",
         "react",
         "react-components",
-        "instagram feed",
         "gallery",
         "graphapi"
     ],
@@ -25,6 +25,7 @@
         "test": "jest"
     },
     "peerDependencies": {
+        "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
     "devDependencies": {
@@ -45,7 +46,6 @@
         "react-test-renderer": "^17.0.2",
         "rollup": "^2.53.1",
         "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-sass": "^1.2.2",
         "rollup-plugin-typescript2": "^0.30.0",
         "rollup-plugin-uglify": "^6.0.4",
         "ts-jest": "^27.0.3",

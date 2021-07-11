@@ -2,7 +2,7 @@
 
 ![MIT](https://img.shields.io/badge/license-MIT-green)
 ![passing](https://img.shields.io/badge/build-passing-green)
-![v1.1.0](https://img.shields.io/badge/release-v1.1.0-blue)
+![v1.2.0](https://img.shields.io/badge/release-v1.2.0-blue)
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
 
 A React Component that uses the Instagram Graph API to create a gallery from an Instagram users feed.
@@ -49,6 +49,50 @@ const App = () => {
 }
 
 export default App
+```
+
+### Styling
+
+Everyone has different needs so styles have been intentionally left out of this package.
+
+This component only has 4 elements to apply styles to:
+
+-   The main gallery container: `.instagram-gallery`
+
+-   Instagram item containers: `.instagram-item`
+
+-   Instagram images themselves: `.instagram-image`
+
+-   Pagination container: `.pagination`
+
+Example CSS used for development:
+
+```
+.instagram-gallery {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.instagram-item {
+    -webkit-box-flex: 0;
+    flex: 0 0 calc(100% / 6 - 10px);
+    margin: 5px;
+    display: block;
+    position: relative;
+}
+
+.instagram-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.pagination {
+  display: block;
+  margin: 0 auto;
+  padding: 2em;
+}
 ```
 
 ## Getting an access token
