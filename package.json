@@ -1,6 +1,6 @@
 {
     "name": "instagram-gallery",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "An instagram gallery react component that uses the instagram graph API.",
     "repository": "https://github.com/MarkBlythe/instagram-gallery",
     "keywords": [
