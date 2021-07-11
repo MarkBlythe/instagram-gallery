@@ -19,11 +19,25 @@ npm install --save instagram-gallery
 
 ## Usage
 
+### Simple usage
+
 ```
 import { InstagramGallery } from "instagram-gallery";
 
 const App = () => {
   return <InstagramGallery accessToken="accessToken" count={24}/>
+}
+
+export default App
+```
+
+### Usage with pagination
+
+```
+import { InstagramGallery } from "instagram-gallery";
+
+const App = () => {
+  return <InstagramGallery accessToken="accessToken" count={24} pagination={true}/>
 }
 
 export default App

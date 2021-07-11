@@ -4,27 +4,28 @@ import "./styles.scss";
 interface GalleryProps {
     accessToken: string;
     count: number;
+    pagination?: boolean;
 }
 
 export const InstagramGallery = (props: GalleryProps) => {
     const [loading, setLoading] = useState<Boolean>(true);
     const [error, setError] = useState<Boolean>(false);
     const [instagramData, setInstagramData] = useState<any>(null);
+    const [usePagination, setUsePagination] = useState<boolean>(false);
+    const [paginationNextUrl, setPaginationNextUrl] = useState<string>("");
+    const [paginationPrevUrl, setPaginationPrevUrl] = useState<string>("");
 
-    useEffect(() => {
-        const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url&&access_token=${props.accessToken}`;
+    const fetchInstagramData = (url: string) => {
         fetch(url)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                console.log({ data });
                 if (data.hasOwnProperty("error")) {
                     setLoading(false);
                     setError(true);
                 } else {
-                    setInstagramData(data.data);
-                    console.log(instagramData);
+                    setInstagramData(data);
                     setLoading(false);
                 }
             })
@@ -33,7 +34,34 @@ export const InstagramGallery = (props: GalleryProps) => {
                 setError(true);
                 setLoading(false);
             });
+    };
+
+    useEffect(() => {
+        const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url&limit=${props.count}&access_token=${props.accessToken}`;
+        fetchInstagramData(url);
     }, []);
+
+    useEffect(() => {
+        if (props.pagination) {
+            setUsePagination(props.pagination);
+        }
+    }, [props]);
+
+    useEffect(() => {
+        if (instagramData !== null) {
+            console.log(instagramData);
+            setPaginationNextUrl(instagramData.paging.next);
+            setPaginationPrevUrl(instagramData.paging.previous);
+        }
+    }, [instagramData]);
+
+    const handlePaginationNext = () => {
+        fetchInstagramData(paginationNextUrl);
+    };
+
+    const handlePaginationPrev = () => {
+        fetchInstagramData(paginationPrevUrl);
+    };
 
     if (loading) {
         return <div className="instagram-gallery">LOADING...</div>;
@@ -49,29 +77,29 @@ export const InstagramGallery = (props: GalleryProps) => {
 
     return (
         <div className="instagram-gallery">
-            {instagramData
+            {instagramData.data
                 .slice(0, props.count)
-                .map((feed: any, index: any) => (
+                .map((item: any, index: any) => (
                     <div key={index} className="instagram-item">
                         <a
                             key={index}
-                            href={feed.permalink}
+                            href={item.permalink}
                             className="ig-instagram-link"
                             target="_blank"
                             rel="noreferrer"
                         >
-                            {feed.media_type === "IMAGE" ||
-                            feed.media_type === "CAROUSEL_ALBUM" ? (
+                            {item.media_type === "IMAGE" ||
+                            item.media_type === "CAROUSEL_ALBUM" ? (
                                 <img
                                     className="instagram-image"
                                     key={index}
-                                    src={feed.media_url}
+                                    src={item.media_url}
                                     alt="description"
                                 />
                             ) : (
                                 <video className="instagram-image" key={index}>
                                     <source
-                                        src={feed.media_url}
+                                        src={item.media_url}
                                         type="video/mp4"
                                     />
                                 </video>
@@ -79,6 +107,20 @@ export const InstagramGallery = (props: GalleryProps) => {
                         </a>
                     </div>
                 ))}
+            {usePagination && (
+                <div className="pagination">
+                    {paginationPrevUrl && (
+                        <button type="button" onClick={handlePaginationPrev}>
+                            Previous
+                        </button>
+                    )}
+                    {paginationNextUrl && (
+                        <button type="button" onClick={handlePaginationNext}>
+                            Next
+                        </button>
+                    )}
+                </div>
+            )}
         </div>
     );
 };
