@@ -2,10 +2,12 @@
 
 ![MIT](https://img.shields.io/badge/license-MIT-green)
 ![passing](https://img.shields.io/badge/build-passing-green)
-![v1.2.0](https://img.shields.io/badge/release-v1.2.0-blue)
+![v1.2.1](https://img.shields.io/badge/release-v1.2.1-blue)
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
 
 A React Component that uses the Instagram Graph API to create a gallery from an Instagram users feed.
+
+This package includes Typescript declarations.
 
 ## Install
 
