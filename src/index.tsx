@@ -20,6 +20,7 @@ export const InstagramGallery = (props: GalleryProps) => {
                 return response.json();
             })
             .then((data) => {
+                console.log({ data });
                 if (data.hasOwnProperty("error")) {
                     setLoading(false);
                     setError(true);
@@ -36,7 +37,7 @@ export const InstagramGallery = (props: GalleryProps) => {
     };
 
     useEffect(() => {
-        const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url&limit=${props.count}&access_token=${props.accessToken}`;
+        const url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&limit=${props.count}&access_token=${props.accessToken}`;
         fetchInstagramData(url);
     }, []);
 
@@ -92,7 +93,7 @@ export const InstagramGallery = (props: GalleryProps) => {
                                     className="instagram-image"
                                     key={index}
                                     src={item.media_url}
-                                    alt="description"
+                                    alt={item.caption}
                                 />
                             ) : (
                                 <video className="instagram-image" key={index}>
