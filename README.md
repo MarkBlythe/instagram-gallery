@@ -1,8 +1,7 @@
 # Instagram Gallery
 
 ![MIT](https://img.shields.io/badge/license-MIT-green)
-![passing](https://img.shields.io/badge/build-passing-green)
-![v1.2.1](https://img.shields.io/badge/release-v1.2.1-blue)
+![v1.2.2](https://img.shields.io/badge/release-v1.2.2-blue)
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
 
 A React Component that uses the Instagram Graph API to create a gallery from an Instagram users feed.
@@ -25,7 +24,10 @@ npm install --save instagram-gallery
 
 To display a simple gallery with a set number of items.
 
-Use the `count` prop to define number of items.
+Props:
+
+-   `accessToken`: Required.
+-   `count`: Required. Defines the number of items.
 
 ```
 import { InstagramGallery } from "instagram-gallery";
@@ -41,7 +43,11 @@ export default App
 
 To display a paginated gallery with a set number of items per page.
 
-Use the `count` prop to define number of items per page.
+Props:
+
+-   `accessToken`: Required.
+-   `count`: Required. Defines the number of items per page.
+-   `pagination`: Optional. Boolean to show the pagination buttons.
 
 ```
 import { InstagramGallery } from "instagram-gallery";
@@ -105,6 +111,10 @@ Example CSS used for development:
 -   Accept the tester invitation on Instagram (Settings > Apps and Websites > Tester Invites)
 -   Go back to the Facebook Developer portal and you should be able to generate a token for the account.
 
-### :)
+## Contributing
+
+This package was made as a bit of fun because I always found myself needing it for projects.
+
+If you find it useful or have any issues / ideas please open an issue on GitHub.
 
 <a href="https://www.buymeacoffee.com/MORK" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

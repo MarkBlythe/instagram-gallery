@@ -82,7 +82,7 @@ export const InstagramGallery = (props: GalleryProps) => {
                         <a
                             key={index}
                             href={item.permalink}
-                            className="ig-instagram-link"
+                            className="instagram-link"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -108,12 +108,20 @@ export const InstagramGallery = (props: GalleryProps) => {
             {usePagination && (
                 <div className="pagination">
                     {paginationPrevUrl && (
-                        <button type="button" onClick={handlePaginationPrev}>
+                        <button
+                            className="pagination-btn pagination-prev"
+                            type="button"
+                            onClick={handlePaginationPrev}
+                        >
                             Previous
                         </button>
                     )}
                     {paginationNextUrl && (
-                        <button type="button" onClick={handlePaginationNext}>
+                        <button
+                            className="pagination-btn pagination-next"
+                            type="button"
+                            onClick={handlePaginationNext}
+                        >
                             Next
                         </button>
                     )}
