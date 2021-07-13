@@ -1,7 +1,7 @@
 # Instagram Gallery
 
 ![MIT](https://img.shields.io/badge/license-MIT-green)
-![v1.2.2](https://img.shields.io/badge/release-v1.2.2-blue)
+![v1.2.3](https://img.shields.io/badge/release-v1.2.3-blue)
 ![npm type definitions](https://img.shields.io/npm/types/typescript)
 
 A React Component that uses the Instagram Graph API to create a gallery from an Instagram users feed.
