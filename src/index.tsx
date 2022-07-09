@@ -96,10 +96,22 @@ export const InstagramGallery = (props: GalleryProps) => {
                                     alt={item.caption}
                                 />
                             ) : (
-                                <video className="instagram-image" key={index}>
+                                <video
+                                    src={item.media_url}
+                                    className="instagram-image"
+                                    key={index}
+                                    autoPlay
+                                    muted
+                                    playsInline
+                                    controls
+                                >
                                     <source
                                         src={item.media_url}
                                         type="video/mp4"
+                                    />
+                                    <source
+                                        src={item.media_url}
+                                        type="video/webm"
                                     />
                                 </video>
                             )}
